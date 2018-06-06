@@ -1,0 +1,2 @@
+cinst SublimeText3
+pause
