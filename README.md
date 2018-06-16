@@ -485,9 +485,11 @@ Read [this](https://multilingualapptoolkit.uservoice.com/knowledgebase/articles/
 
 ### Notes from the field
 
-Update the xlf files properties to:
+It works like a charm (PM 1.0.2 / XF 3.0.0.561731). Pay attention when adding a new translation to:
 
-- Build Action: XLIFF Localization file
-- Custom Tool: PublicResXFileCodeGenerator
+- Add translation language from project context menu M.A.P.
+- Go to xlf file (in Solution Explorer) and change property "Build Action" to "XLIFF Localization File"
+- Access "Generate machine translations" from the xlf file M.A.P. context menu
+- Rebuild the project
 
 ![See image](docs/images/xlf_settings.png)
