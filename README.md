@@ -63,6 +63,7 @@ DevOp Notes and more
   - [Azure](#azure)
     - [Switch the resource plan profile](#switch-the-resource-plan-profile)
     - [Microsoft Active Directory v2 app registration](#microsoft-active-directory-v2-app-registration)
+  - [Multilingual App Toolkit](#multilingual-app-toolkit)
 
 ## Scope
 
@@ -476,3 +477,8 @@ Login-AzureRmAccount
 Set-AzureRmAppServicePlan -ResourceGroupName $YourAzureResourceGroup -Name $YourAzureResourcePlan -Tier Free
 ```
 
+## Multilingual App Toolkit
+
+A great tool for automatically translate a bunch of res files to many languages. Install it as tool in Visual studio 2017. 
+Create a free subscription on your Azure account, add a translator service, copy the key from keys, add it to your Credential Manager  and you are ready to go.
+Read [this](https://multilingualapptoolkit.uservoice.com/knowledgebase/articles/1167898)
