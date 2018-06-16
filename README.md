@@ -62,8 +62,8 @@ DevOp Notes and more
     - [Chrome Debugging with Angular CLI](#chrome-debugging-with-angular-cli)
   - [Azure](#azure)
     - [Switch the resource plan profile](#switch-the-resource-plan-profile)
-    - [Microsoft Active Directory v2 app registration](#microsoft-active-directory-v2-app-registration)
   - [Multilingual App Toolkit](#multilingual-app-toolkit)
+    - [Notes from the field](#notes-from-the-field)
 
 ## Scope
 
@@ -482,3 +482,12 @@ Set-AzureRmAppServicePlan -ResourceGroupName $YourAzureResourceGroup -Name $Your
 A great tool for automatically translate a bunch of res files to many languages. Install it as tool in Visual studio 2017. 
 Create a free subscription on your Azure account, add a translator service, copy the key from keys, add it to your Credential Manager  and you are ready to go.
 Read [this](https://multilingualapptoolkit.uservoice.com/knowledgebase/articles/1167898)
+
+### Notes from the field
+
+Update the xlf files properties to:
+
+- Build Action: XLIFF Localization file
+- Custom Tool: PublicResXFileCodeGenerator
+
+![See image](docs/images/xlf_settings.png)
