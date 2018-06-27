@@ -62,8 +62,13 @@ DevOp Notes and more
     - [Chrome Debugging with Angular CLI](#chrome-debugging-with-angular-cli)
   - [Azure](#azure)
     - [Switch the resource plan profile](#switch-the-resource-plan-profile)
+    - [Configure Postman for MobileAppService](#configure-postman-for-mobileappservice)
   - [Multilingual App Toolkit](#multilingual-app-toolkit)
     - [Notes from the field](#notes-from-the-field)
+  - [Android Development](#android-development)
+    - [Start a shell to the device](#start-a-shell-to-the-device)
+    - [Check files on attached device](#check-files-on-attached-device)
+    - [Pull a file](#pull-a-file)
 
 ## Scope
 
@@ -477,6 +482,22 @@ Login-AzureRmAccount
 Set-AzureRmAppServicePlan -ResourceGroupName $YourAzureResourceGroup -Name $YourAzureResourcePlan -Tier Free
 ```
 
+### Configure Postman for MobileAppService
+
+In order to test a mobile app service guarded by an identityprovider, you may use Postman. The following example use facebook as identity provider.
+Point your browser to [https://yourservice.azurewebsites.net//.auth/login/facebook](https://yourservice.azurewebsites.net//.auth/login/facebook)
+The returned URL if it is URLdecoded contain a token in JSON format
+
+```url
+https://yourservice.azurewebsites.net/.auth/login/done#token={"authenticationToken":"####thetokenstring#####","user":{"userId":"sid:#####ausersid#####"}}
+```
+
+Start a GET in Postman with two headers:
+
+- ZUMO-API-VERSION with value 2.0.0
+- X-ZUMO-AUTH with value ####thetokenstring##### copied from the returned URL
+
+
 ## Multilingual App Toolkit
 
 A great tool for automatically translate a bunch of res files to many languages. Install it as tool in Visual studio 2017. 
@@ -493,3 +514,36 @@ It works like a charm (PM 1.0.2 / XF 3.0.0.561731). Pay attention when adding a 
 - Rebuild the project
 
 ![See image](docs/images/xlf_settings.png)
+
+## Android Development
+
+### Start a shell to the device
+
+```bash
+adb devices
+adb shell
+```
+
+### Check files on attached device
+
+Start a shell and run next...
+
+```shell
+run-as com.myapp ls -l /data/data/com.myapp/files/myappdatabase
+```
+
+### Pull a file
+
+Start a shell and run next...
+
+```shell
+adb pull /data/data/com.myapp/files/myappdatabase
+```
+
+If not allowed ...
+
+```shell
+adb shell "run-as com.myapp chmod 666 /data/data/com.myapp/files/syncstore_myapp.db"
+adb exec-out run-as com.myapp cat /data/data/com.myapp/files/syncstore_myapp.db > syncstore_myapp.db
+adb shell "run-as com.myapp chmod 600 /data/data/com.myapp/files/syncstore_myapp.db"
+```
