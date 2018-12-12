@@ -60,6 +60,8 @@ DevOp Notes and more
   - [Visual studio code - Angular](#visual-studio-code---angular)
     - [Angular CLI using https](#angular-cli-using-https)
     - [Chrome Debugging with Angular CLI](#chrome-debugging-with-angular-cli)
+  - [Visual studio IDE](#visual-studio-ide)
+    - [Todo or not todo](#todo-or-not-todo)
   - [Azure](#azure)
     - [Switch the resource plan profile](#switch-the-resource-plan-profile)
     - [Configure Postman for MobileAppService](#configure-postman-for-mobileappservice)
@@ -470,6 +472,18 @@ ng serve --ssl 1 --ssl-key "ssl/yourdomain.io.key" --ssl-cert "ssl/yourdomain.io
   ]
 }
 ```
+
+## Visual studio IDE
+
+### Todo or not todo
+
+If you need to remember tasks and their start position in code, place todo marker wherever you need. Visual Studio will recognize them automatically and will place them in the "Task List" (View menu => Task List).
+
+```C#
+// todo #124. Issue on serializing culture dependent strings
+```
+
+The todo marker is case insensitive. Todo, toDo, todo are valid forms.
 
 ## Azure
 
