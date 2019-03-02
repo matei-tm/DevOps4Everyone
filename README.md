@@ -71,6 +71,9 @@ DevOp Notes and more
     - [Start a shell to the device](#start-a-shell-to-the-device)
     - [Check files on attached device](#check-files-on-attached-device)
     - [Pull a file](#pull-a-file)
+  - [Flutter/Dart](#flutterdart)
+    - [Publish Dart package](#publish-dart-package)
+    - [Generating documentation](#generating-documentation)
 
 ## Scope
 
@@ -561,3 +564,37 @@ adb shell "run-as com.myapp chmod 666 /data/data/com.myapp/files/syncstore_myapp
 adb exec-out run-as com.myapp cat /data/data/com.myapp/files/syncstore_myapp.db > syncstore_myapp.db
 adb shell "run-as com.myapp chmod 600 /data/data/com.myapp/files/syncstore_myapp.db"
 ```
+
+## Flutter/Dart
+
+### Publish Dart package
+
+Generate a new package with Android Studio.  
+Add your code
+
+All the following steps will be penalties if not provided
+1. Add a test
+2. Add an example
+3. Add 160-180 length description in pubspec
+4. Comment your code
+5. Add a license
+
+```shell
+# format
+flutter format [filename]
+
+# test publish constraints
+flutter packages pub publish --dry-run
+
+# publish
+flutter packages pub publish
+```
+
+
+### Generating documentation
+
+```shell
+flutter packages pub global activate  dartdoc
+flutter packages pub global run dartdoc:dartdoc %*
+```
+
