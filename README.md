@@ -74,6 +74,7 @@ DevOp Notes and more
   - [Flutter/Dart](#flutterdart)
     - [Publish Dart package](#publish-dart-package)
     - [Generating documentation](#generating-documentation)
+    - [Generating animated gifs](#generating-animated-gifs)
 
 ## Scope
 
@@ -598,3 +599,6 @@ flutter packages pub global activate  dartdoc
 flutter packages pub global run dartdoc:dartdoc %*
 ```
 
+### Generating animated gifs
+
+A quick how-to on [https://github.com/flutter/flutter/wiki/Making-animated-GIFs-of-Flutter-apps](https://github.com/flutter/flutter/wiki/Making-animated-GIFs-of-Flutter-apps)
