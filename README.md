@@ -76,6 +76,8 @@ DevOp Notes and more
     - [Publish Dart package](#Publish-Dart-package)
     - [Generating documentation](#Generating-documentation)
     - [Generating animated gifs](#Generating-animated-gifs)
+  - [Tools](#Tools)
+    - [Test & Feedback extension for Chrome](#Test--Feedback-extension-for-Chrome)
 
 ## Scope
 
@@ -607,3 +609,10 @@ flutter packages pub global run dartdoc:dartdoc %*
 ### Generating animated gifs
 
 A quick how-to on [https://github.com/flutter/flutter/wiki/Making-animated-GIFs-of-Flutter-apps](https://github.com/flutter/flutter/wiki/Making-animated-GIFs-of-Flutter-apps)
+
+
+## Tools
+
+### Test & Feedback extension for Chrome
+
+[https://marketplace.visualstudio.com/items?itemName=ms.vss-exploratorytesting-web](https://marketplace.visualstudio.com/items?itemName=ms.vss-exploratorytesting-web)
