@@ -27,6 +27,10 @@ DevOp Notes and more
     - [Stop container](#Stop-container)
     - [Follow logs](#Follow-logs)
     - [Delete images](#Delete-images)
+    - [Get container IP](#Get-container-IP)
+      - [From powershell console](#From-powershell-console)
+      - [From DOS console](#From-DOS-console)
+      - [From a DOS batch file](#From-a-DOS-batch-file)
     - [Docker 18 Edge](#Docker-18-Edge)
     - [.NET Framework on container](#NET-Framework-on-container)
   - [Gitlab](#Gitlab)
@@ -252,6 +256,30 @@ Delete images sourced from the "thereponame"
 
 ```PowerShell
 &docker images --format "{{.Repository}}:{{.Tag}}" | foreach { $_.split(' ')[0]} | where-object {$_   -Like "thereponame*"} | foreach {docker image rm $_}
+```
+
+### Get container IP
+
+Presuming that we have a `doduck` image with tag `dev`
+
+#### From powershell console
+
+```PowerShell
+ &docker ps --filter "status=running" --filter "ancestor=doduck:dev" --format "{{.Names}}" | foreach {docker inspect --format '{{ .NetworkSettings.Networks.nat.IPAddress }}' $_ } | Select-Object -first 1
+```
+
+#### From DOS console
+
+```dos
+FOR /F "tokens=*" %m IN ('docker ps --filter "status=running" --filter "ancestor=doduck:dev" --format "{{.Names}}" ') do (FOR /F "tokens=*" %g IN ('docker inspect --format "{{ .NetworkSettings.Networks.nat.IPAddress }}" %m') do (SET DODUCKIP=%g))
+echo %doduckip%
+```
+
+#### From a DOS batch file
+
+```dos
+FOR /F "tokens=*" %%m IN ('docker ps --filter "status=running" --filter "ancestor=doduck:dev" --format "{{.Names}}" ') do (FOR /F "tokens=*" %%g IN ('docker inspect --format "{{ .NetworkSettings.Networks.nat.IPAddress }}" %%m') do (SET DODUCKIP=%%g))
+echo %doduckip%
 ```
 
 ### Docker 18 Edge
