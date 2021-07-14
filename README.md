@@ -1,8 +1,8 @@
-# DevOp Notes and Tools
+# Dev & Ops Notes and Tools
 
-DevOp Notes and more
+Dev & Ops Notes and more
 
-- [DevOp Notes and Tools](#devop-notes-and-tools)
+- [Dev & Ops Notes and Tools](#dev--ops-notes-and-tools)
   - [Scope](#scope)
   - [Editorconfig](#editorconfig)
     - [Create .editorconfig](#create-editorconfig)
